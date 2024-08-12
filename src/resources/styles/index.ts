@@ -6,7 +6,6 @@ const styles = {
     flex: 1,
     padding: 16,
     justifyContent: 'center',
-    backgroundColor: theme.colors.background,
   } satisfies StyleProp<ViewStyle>,
   actionContainer: {
     flex: 1,

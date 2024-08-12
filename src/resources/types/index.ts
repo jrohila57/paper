@@ -1,6 +1,7 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 
-type AuthStackParamList = {
+type RoutesLink = {
+  home: undefined;
   'sign-in': undefined;
   'sign-up': undefined;
   'forgot-password': undefined;
@@ -9,17 +10,20 @@ type AuthStackParamList = {
 };
 
 export interface ComponentSignInProps {
-  navigation: StackNavigationProp<AuthStackParamList, 'sign-in'>;
+  navigation: StackNavigationProp<RoutesLink, 'sign-in'>;
 }
 export interface ComponentSignUpProps {
-  navigation: StackNavigationProp<AuthStackParamList, 'sign-up'>;
+  navigation: StackNavigationProp<RoutesLink, 'sign-up'>;
 }
 export interface ComponentForgotPasswordProps {
-  navigation: StackNavigationProp<AuthStackParamList, 'forgot-password'>;
+  navigation: StackNavigationProp<RoutesLink, 'forgot-password'>;
 }
 export interface ComponentResetPasswordProps {
-  navigation: StackNavigationProp<AuthStackParamList, 'reset-password'>;
+  navigation: StackNavigationProp<RoutesLink, 'reset-password'>;
 }
 export interface ComponentOTPSubmitProps {
-  navigation: StackNavigationProp<AuthStackParamList, 'otp-verify'>;
+  navigation: StackNavigationProp<RoutesLink, 'otp-verify'>;
+}
+export interface ComponentHomeProps {
+  navigation: StackNavigationProp<RoutesLink, 'home'>;
 }
