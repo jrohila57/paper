@@ -1,5 +1,4 @@
 import { StyleProp, TextStyle, ViewStyle } from 'react-native';
-import theme from '../theme';
 
 const styles = {
   container: {
@@ -32,7 +31,6 @@ const styles = {
     paddingRight: 16,
     fontSize: 18,
     fontWeight: 'semibold',
-    color: theme.colors.backdrop,
   } satisfies StyleProp<TextStyle>,
   textField: {
     borderRadius: 10,
