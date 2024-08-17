@@ -1,12 +1,11 @@
 import React from 'react';
 import EntryPoint from './src';
-import {PaperProvider} from 'react-native-paper';
-import theme from './src/resources/theme';
+import { store } from './src/core/store';
+import { Provider as ReduxProvider } from 'react-redux';
 
 export default function App() {
   return (
-    <PaperProvider theme={theme}>
+    <ReduxProvider store={store}>
       <EntryPoint />
-    </PaperProvider>
-  );
+    </ReduxProvider>)
 }
