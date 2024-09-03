@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import AppForm from '../../../components/common/form/AppForm';
 import AppFormField from '../../../components/common/form/AppFormField';
 import AppFormSubmitButton from '../../../components/common/form/AppFormSubmitButton';
-import { Card, Subheading, Title } from 'react-native-paper';
+import { Card, Divider, Subheading, Title } from 'react-native-paper';
 import styles from '../../../resources/styles';
 import { ComponentSignUpProps } from '../../../resources/types';
 const validationSchema = Yup.object().shape({
@@ -28,9 +28,10 @@ const ComponentSignUp: React.FC<ComponentSignUpProps> = ({ navigation }) => {
   return (
     <>
       <View style={styles.container}>
-        <Card mode="elevated">
+        <Card style={styles.card}>
           <Title style={styles.title}>Sign Up</Title>
           <Subheading style={styles.subTitle}>Enter your full name, email address and password.</Subheading>
+
           <Card.Content>
             <AppForm
               initialValues={initialValues}
@@ -79,6 +80,7 @@ const ComponentSignUp: React.FC<ComponentSignUpProps> = ({ navigation }) => {
           </Card.Content>
           <Card.Actions>
             <View style={styles.actionContainer}>
+              <Divider />
               <TouchableOpacity onPress={() => navigation.navigate('sign-in')}>
                 <Text style={styles.linkText}>Already have an account? Sign In</Text>
               </TouchableOpacity>

@@ -7,5 +7,6 @@ export default function App() {
   return (
     <ReduxProvider store={store}>
       <EntryPoint />
-    </ReduxProvider>)
+    </ReduxProvider>
+  );
 }

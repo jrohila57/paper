@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import AppForm from '../../../components/common/form/AppForm';
 import AppFormField from '../../../components/common/form/AppFormField';
 import AppFormSubmitButton from '../../../components/common/form/AppFormSubmitButton';
-import { Card, Subheading, Title } from 'react-native-paper';
+import { Card, Divider, Subheading, Title } from 'react-native-paper';
 import styles from '../../../resources/styles';
 import { ComponentSignInProps } from '../../../resources/types';
 
@@ -19,7 +19,7 @@ const initialValues = { email: '', password: '' };
 const ComponentSignIn: React.FC<ComponentSignInProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Card mode="elevated">
+      <Card style={styles.card}>
         <Title style={styles.title}>Sign In</Title>
         <Subheading style={styles.subTitle}>Enter your email address and password.</Subheading>
         <Card.Content>
@@ -56,6 +56,7 @@ const ComponentSignIn: React.FC<ComponentSignInProps> = ({ navigation }) => {
         </Card.Content>
         <Card.Actions>
           <View style={styles.actionContainer}>
+            <Divider />
             <TouchableOpacity onPress={() => navigation.navigate('forgot-password')}>
               <Text style={styles.linkText}>Forgot Password?</Text>
             </TouchableOpacity>

@@ -5,9 +5,10 @@ import * as Yup from 'yup';
 import AppForm from '../../../components/common/form/AppForm';
 import AppFormField from '../../../components/common/form/AppFormField';
 import AppFormSubmitButton from '../../../components/common/form/AppFormSubmitButton';
-import { Card, Subheading, Title } from 'react-native-paper';
+import { Card, Divider, Subheading, Title } from 'react-native-paper';
 import styles from '../../../resources/styles';
 import { ComponentForgotPasswordProps } from '../../../resources/types';
+import KeyboardAvoidingWrapper from '../../../components/common/keyboard/keyboardAvoidWrapper';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Please enter a valid email').required('Email is required').label('Email'),
@@ -17,8 +18,8 @@ const initialValues = { email: '' };
 
 const ComponentForgotPassword: React.FC<ComponentForgotPasswordProps> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Card mode="elevated">
+    <KeyboardAvoidingWrapper>
+      <Card style={styles.card}>
         <Title style={styles.title}>Forgot Password</Title>
         <Subheading style={styles.subTitle}>Enter your email address to reset your password.</Subheading>
         <Card.Content>
@@ -45,13 +46,14 @@ const ComponentForgotPassword: React.FC<ComponentForgotPasswordProps> = ({ navig
         </Card.Content>
         <Card.Actions>
           <View style={styles.actionContainer}>
+            <Divider />
             <TouchableOpacity onPress={() => navigation.navigate('sign-in')}>
               <Text style={styles.linkText}>Back to Sign In</Text>
             </TouchableOpacity>
           </View>
         </Card.Actions>
       </Card>
-    </View>
+    </KeyboardAvoidingWrapper>
   );
 };
 

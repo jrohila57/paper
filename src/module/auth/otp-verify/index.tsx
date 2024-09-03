@@ -5,9 +5,10 @@ import * as Yup from 'yup';
 import AppForm from '../../../components/common/form/AppForm';
 import AppFormField from '../../../components/common/form/AppFormField';
 import AppFormSubmitButton from '../../../components/common/form/AppFormSubmitButton';
-import { Card, Subheading, Title } from 'react-native-paper';
+import { Card, Divider, Subheading, Title } from 'react-native-paper';
 import styles from '../../../resources/styles';
 import { ComponentOTPSubmitProps } from '../../../resources/types';
+import KeyboardAvoidingWrapper from '../../../components/common/keyboard/keyboardAvoidWrapper';
 
 const validationSchema = Yup.object().shape({
   otp: Yup.string()
@@ -21,8 +22,8 @@ const initialValues = { otp: '' };
 
 const ComponentOTPVerify: React.FC<ComponentOTPSubmitProps> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Card mode="elevated">
+    <KeyboardAvoidingWrapper>
+      <Card style={styles.card}>
         <Title style={styles.title}>Submit OTP</Title>
         <Subheading style={styles.subTitle}>Enter the OTP sent to your email/phone.</Subheading>
         <Card.Content>
@@ -48,13 +49,14 @@ const ComponentOTPVerify: React.FC<ComponentOTPSubmitProps> = ({ navigation }) =
         </Card.Content>
         <Card.Actions>
           <View style={styles.actionContainer}>
+            <Divider />
             <TouchableOpacity onPress={() => navigation.navigate('sign-in')}>
               <Text style={styles.linkText}>Back to Sign In</Text>
             </TouchableOpacity>
           </View>
         </Card.Actions>
       </Card>
-    </View>
+    </KeyboardAvoidingWrapper>
   );
 };
 

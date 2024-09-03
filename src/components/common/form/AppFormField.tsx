@@ -17,6 +17,10 @@ const AppFormField = (props: any) => {
         mode="outlined"
         placeholder={placeholder}
         onChangeText={(text) => onChange(name)(text)}
+        underlineColor="transparent"
+        theme={{
+          roundness: 10,
+        }}
         onBlur={() => {
           setFieldTouched(name);
           onBlur(name);

@@ -3,7 +3,11 @@ import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 const styles = {
   container: {
     flex: 1,
-    padding: 16,
+    padding: 10,
+  } satisfies StyleProp<ViewStyle>,
+  card: {
+    flex: 1,
+    padding: 4,
     justifyContent: 'center',
   } satisfies StyleProp<ViewStyle>,
   actionContainer: {
@@ -23,14 +27,14 @@ const styles = {
     padding: 16,
     paddingBottom: 4,
     paddingTop: 14,
-    fontSize: 32,
+    fontSize: 42,
     fontWeight: 'bold',
   } satisfies StyleProp<TextStyle>,
   subTitle: {
     paddingLeft: 16,
     paddingRight: 16,
-    fontSize: 18,
-    fontWeight: 'semibold',
+    fontSize: 20,
+    fontWeight: 'bold',
   } satisfies StyleProp<TextStyle>,
   textField: {
     borderRadius: 10,
@@ -38,8 +42,10 @@ const styles = {
     paddingLeft: 4,
     borderBottom: 0,
   },
-  errorColor: { color: 'red' },
-  linkText: { color: 'blue', marginTop: 16 },
+  flexGrow: { flexGrow: 1 },
+  flex: { flex: 1 },
+  errorColor: { color: 'rose' },
+  linkText: { marginTop: 16 },
 };
 
 export default styles;
